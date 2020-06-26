@@ -36,6 +36,14 @@ class MovieController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|string|max:255|min:3',
+            'genre' => 'required|int|exists:genres,id',
+            'description,' => 'required|string|min:6',
+            'country' =>'required|string',
+            'cover' => 'image'
+        ]);
+
         $image = $request->file('image');
         $image_path = $image->store('covers','public');
 
@@ -81,6 +89,14 @@ class MovieController extends Controller
      */
     public function update(Request $request, Movie $movie)
     {
+
+        $request->validate([
+            'title' => 'required|string|max:255|min:3',
+            'genre' => 'required|int|exists:genres,id',
+            'description,' => 'required|string|min:6',
+            'country' =>'required|string',
+            'cover' => 'image'
+        ]);
 
         $data = $request->except('image');
 
