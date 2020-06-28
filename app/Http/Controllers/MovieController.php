@@ -109,7 +109,7 @@ class MovieController extends Controller
 
 
 
-        $movie = Movie::update($data);
+            $movie->update($data);
 
         return $movie;
     }
@@ -123,6 +123,7 @@ class MovieController extends Controller
     public function destroy(Movie $movie)
     {
         $movie->delete();
-        return $movie;
+
+        return response()->json(['message'=>'deleted']);
     }
 }

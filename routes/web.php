@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('movies','MoviesController@index');
-Route::post('movies','MoviesController@store');
-Route::put('movies/{id}','MoviesController@update');
-Route::delete('movies/{id}','MoviesController@destroy');
+//Route::get('movies','MoviesController@index');
+//Route::post('movies','MoviesController@store');
+//Route::put('movies/{id}','MoviesController@update');
+//Route::delete('movies/{id}','MoviesController@destroy');
