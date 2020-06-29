@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Movie;
 use Illuminate\Http\Request;
 
-class MovieController extends Controller
+class MoviesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -38,7 +38,6 @@ class MovieController extends Controller
     {
         $request->validate([
             'title' => 'required|string|max:255|min:3',
-            'genre' => 'required|int|exists:genres,id',
             'description,' => 'required|string|min:6',
             'country' =>'required|string',
             'cover' => 'image'
@@ -92,7 +91,6 @@ class MovieController extends Controller
 
         $request->validate([
             'title' => 'required|string|max:255|min:3',
-            'genre' => 'required|int|exists:genres,id',
             'description,' => 'required|string|min:6',
             'country' =>'required|string',
             'cover' => 'image'

@@ -8,8 +8,8 @@ class Genre extends Model
 {
     protected $fillable = ['name'];
 
-    public function movie()
+    public function movies()
     {
-        return $this->belongsTo(Genre::class,'movie_id','id');
+        return $this->belongsToMany(Movie::class,'movies_genres');
     }
 }
