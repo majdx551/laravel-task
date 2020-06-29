@@ -36,14 +36,16 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $request->validate([
             'title' => 'required|string|max:255|min:3',
-            'description,' => 'required|string|min:6',
+            'description' => 'required|string|min:6',
             'country' =>'required|string',
             'cover' => 'image'
         ]);
 
-        $image = $request->file('image');
+        $image = $request->file('cover');
         $image_path = $image->store('covers','public');
 
         $movie = Movie::create([
@@ -91,7 +93,7 @@ class MoviesController extends Controller
 
         $request->validate([
             'title' => 'required|string|max:255|min:3',
-            'description,' => 'required|string|min:6',
+            'description' => 'required|string|min:6',
             'country' =>'required|string',
             'cover' => 'image'
         ]);
